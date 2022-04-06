@@ -10,7 +10,7 @@ pipeline{
         stage("test-sonar"){
             steps{
                 script {
-                    withSonarQubeEnv("sonarQube") {
+                    withSonarQubeEnv("SonarScanner") {
                     sh "${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=solarenergy-frontend \
                         -Dsonar.sources=. \
