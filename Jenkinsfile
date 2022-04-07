@@ -3,7 +3,7 @@ pipeline{
         imagename = "abeerab/imagef"
         registryCredential = "dockerhub_credentials"
         // dockerImage = ''
-        def scannerHome = tool 'sonarqube-scanner'
+        def scannerHome = tool 'SonarScanner'
     }
     agent any
     stages{
