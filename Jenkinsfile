@@ -10,9 +10,9 @@ pipeline{
         stage("test-sonar"){
             steps{
                 script {
-                    withSonarQubeEnv("SonarScanner") {
+                    withSonarQubeEnv("SonarQube") {
                     sh "${scannerHome}/bin/sonar-scanner \
-                        -Dsonar.projectKey=solarenergy-frontend \
+                        -Dsonar.projectKey=mern-frontend \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://localhost:9000 \
                         -Dsonar.login=admin \
