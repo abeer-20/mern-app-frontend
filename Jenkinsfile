@@ -33,7 +33,7 @@ pipeline{
             steps{
                 script {
                     dockerImage = docker.build imagename   
-                    docker.withRegistry( '', dockerhub_credentials ) {
+                    docker.withRegistry( '', registryCredential) {
                     dockerImage.push("$BUILD_NUMBER")
                     dockerImage.push('latest')
                     }
