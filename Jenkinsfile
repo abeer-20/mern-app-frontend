@@ -30,8 +30,6 @@ pipeline{
         }
         
         stage("docker-build"){
-            { def docker = "my docker" // something similar like this
-            }
             steps{
                 script {
                     dockerImage = docker.build imagename   
