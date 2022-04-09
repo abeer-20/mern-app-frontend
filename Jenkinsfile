@@ -1,6 +1,7 @@
 pipeline{
     environment {
         imagename = "abeerab/imagef"
+        registry = "abeerab/imagef"
         registryCredential = "dockerhub_credentials"
         // dockerImage = ''
         def scannerHome = tool 'SonarScanner'
