@@ -2,7 +2,7 @@ pipeline{
     environment {
         imagename = "abeerab/imagef"
         registryCredential = "dockerhub_credentials"
-        // dockerImage = ''
+        dockerImage = ''
         def scannerHome = tool 'SonarScanner'
     }
     agent any
@@ -33,7 +33,7 @@ pipeline{
             steps{
                 script {
                     dockerImage = docker.build imagename   
-                    docker.withRegistry( 'abeerab/imagef', registryCredential) {
+                    docker.withRegistry( '', registryCredential) {
                     dockerImage.push("$BUILD_NUMBER")
                     dockerImage.push('latest')
                     }
