@@ -33,7 +33,7 @@ pipeline{
             steps{
                 script {
                     dockerImage = docker.build imagename   
-                    docker.withRegistry( 'https://hub.docker.com/', registryCredential) {
+                    docker.withRegistry( 'https://hub.docker.com/repository/docker/abeerab/imagef', registryCredential) {
                     dockerImage.push("$BUILD_NUMBER")
                     dockerImage.push('latest')
                     }
